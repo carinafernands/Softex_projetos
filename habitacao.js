@@ -92,7 +92,7 @@ function alterarOrg(){
     }
 
     let alterarOrg = rl.question("Digite o novo nome da organizacao:");
-    org[indice - 1] = alterarOrg;
+    org[indice - 1] = alterarOrg;55
     console.log(`Organizacao ${indice} alterada!`);
 }
 
@@ -153,10 +153,10 @@ function cadastrarHab(){
     }
 
     hab.push({organizacao: org[indiceOrg - 1], habitacao: [nomeHab, tamanhoHab, status]});
-    console.log(`Habitação -> ${nomeHab, tamanhoHab}\n Organizacao -> ${org[indiceOrg - 1]}!`);
+    console.log(`Habitação -> ${nomeHab} - ${tamanhoHab} - ${status}\nOrganizacao -> ${org[indiceOrg - 1]}`);
    
 }
-
+96
 function listarHab(){
     console.log("------ LISTA DE HABITACOES ------\n");
     if(hab.length === 0){           
@@ -164,7 +164,7 @@ function listarHab(){
     }
     
     for (i = 0; i < hab.length; i++){
-        console.log(`${i + 1}Habitacao -> ${hab[i].habitacao}\nOrganizacao -> ${hab[i].organizacao}`);
+        console.log(`${i + 1}Habitacao -> ${hab[i].habitacao} - Organizacao -> ${hab[i].organizacao}`);
     }
 }
 
