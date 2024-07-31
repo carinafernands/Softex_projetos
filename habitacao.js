@@ -4,7 +4,7 @@ let org = [];
 let hab = [];
 
 function exibirMenu() {
-    console.log(`====== MENU ======\n
+console.log(`====== MENU ======\n
 1 - Cadastrar organização:
 2 - Listar organizações:
 3 - Alterar organização:
@@ -64,8 +64,7 @@ function cadastrarOrg(){
     let responsavel = (rl.question("Digite o nome do tecnico responsavel:"));
 
     org.push([nome, cnpj, responsavel]);
-    console.log(`- Organicao: ${nome}\n - CNPJ: ${cnpj}\n - Téc. Responsavel: ${responsavel}\n
-    adicionada com sucesso!!`);
+    console.log(`-> ORGANIZACAO: ${nome}\n-> CNPJ: ${cnpj}\n-> RESPONSÁVEL: ${responsavel}\n- Org. adicionada com sucesso!!`);
 }
 
 function listarOrg(){
@@ -133,9 +132,9 @@ function cadastrarHab(){
         return;
     }
     console.log("------ REGISTRO DE HABITACOES ------\n")
-    let nomeHab = rl.question("Digite o nome da nova hab:");
-    let tamanhoHab = rl.question("Digite o tamanho da hab(m²):");
-    console.log("Escolha o status da hab:\n 1 - Planejamento\n 2 - Construcao\n 3 - Concluida");
+    let nomeHab = rl.question("Digite o nome da nova habitacao:\n");
+    let tamanhoHab = rl.question("Digite o tamanho da hab(m²):\n");
+    console.log("Escolha o status da hab:\n1 - Planejamento\n2 - Construcao\n3 - Concluida");
     let status = [];
     let statusOpcao = Number(rl.question("Digite o status da habitacao:"));
     switch(statusOpcao){
@@ -154,7 +153,7 @@ function cadastrarHab(){
     }
 
     hab.push({organizacao: org[indiceOrg - 1], habitacao: [nomeHab, tamanhoHab, status]});
-    console.log(`Habitacao ${nomeHab, tamanhoHab, status} - Organizacao: ${org[indiceOrg - 1]}!`);
+    console.log(`Habitação -> ${nomeHab, tamanhoHab}\n Organizacao -> ${org[indiceOrg - 1]}!`);
    
 }
 
@@ -165,7 +164,7 @@ function listarHab(){
     }
     
     for (i = 0; i < hab.length; i++){
-        console.log(`${i + 1} -> Habitacao: ${hab[i].habitacao}, Organizacao: ${hab[i].organizacao}`);
+        console.log(`${i + 1}Habitacao -> ${hab[i].habitacao}\nOrganizacao -> ${hab[i].organizacao}`);
     }
 }
 
