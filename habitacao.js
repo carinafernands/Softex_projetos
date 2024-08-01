@@ -91,8 +91,10 @@ function alterarOrg(){
         return;
     }
 
-    let alterarOrg = rl.question("Digite o novo nome da organizacao:");
-    org[indice - 1] = alterarOrg;55
+    let novoNome = rl.question("Digite o novo nome da organizacao:");
+    let novoCnpj = rl.question("Digite o novo CNPJ:");
+    let novoResponsavel = rl.question("Digite o nome do novo responsavel:");
+    org[indice - 1] = {nome: novoNome, cnpj: novoCnpj, responsavel: novoResponsavel}; //OBJETO LITERAL 
     console.log(`Organizacao ${indice} alterada!`);
 }
 
@@ -164,7 +166,7 @@ function listarHab(){
     }
     
     for (i = 0; i < hab.length; i++){
-        console.log(`${i + 1}Habitacao -> ${hab[i].habitacao} - Organizacao -> ${hab[i].organizacao}`);
+        console.log(`${i + 1} - Habitacao -> ${hab[i].habitacao} - Organizacao -> ${hab[i].organizacao}`);
     }
 }
 
@@ -185,6 +187,10 @@ function excluirHab(){
     console.log(`Habitacao: ${habExcluida[0].habitacao} da Org: ${habExcluida[0].organizacao} foi removida com sucesso!`);
 
     exibirMenu();
+}
+
+function alterarHab(){
+    
 }
 
 
