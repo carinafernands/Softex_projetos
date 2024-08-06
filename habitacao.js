@@ -189,9 +189,41 @@ function excluirHab(){
     exibirMenu();
 }
 
-function alterarHab(){
+function alterarHab() {
+     if (hab.length === 0) {
+     console.log("Não há habitações para alterar!!");
+    return;
+    }
     
-}
-
+   listarHab(); 
+    let indice = Number(rl.question("Digite o índice da habitação que deseja alterar:"));
+    if (indice < 1 || indice > hab.length) {
+    console.log("Índice inválido!");
+     return;
+    }
+    
+    console.log("Escolha o status da habitação:\n1 - Planejamento\n2 - Construção\n3 - Concluída");
+    let novaOpcao = Number(rl.question("Digite o novo status:"));
+    let novoStatus;
+    
+    switch (novaOpcao) {
+        case 1:
+            novoStatus = "Planejamento";
+            break;
+        case 2:
+            novoStatus = "Construção";
+            break;
+         case 3:
+            novoStatus = "Concluída";
+            break;
+        default:
+            console.log("Status não especificado! Status será definido como 'Não especificado'.");
+            novoStatus = "Não especificado";
+            break;
+    }
+    
+        hab[indice - 1].habitacao.status = novoStatus; 
+        console.log(`Habitação ${indice} alterada para o status ${novoStatus}.`);
+    }
 
 exibirMenu();
